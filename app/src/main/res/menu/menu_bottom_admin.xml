@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/approveItem"
+        android:icon="@drawable/ic_idea"
+        android:title="Approve" />
+    <item
+        android:id="@+id/approvedItem"
+        android:icon="@drawable/ic_standing"
+        android:title="Approved" />
+    <item
+        android:id="@+id/profileItemAdmin"
+        android:icon="@drawable/ic_profile"
+        android:title="Profile" />
+
+</menu>

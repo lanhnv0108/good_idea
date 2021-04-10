@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.07" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/textViewCreateIdea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:fontFamily="@font/sf_compact_bold"
+            android:text="Tạo ý tưởng\ncủa bạn"
+            android:textColor="@color/mountain_meadow"
+            android:textSize="32sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewNameIdea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="78dp"
+            android:fontFamily="@font/sf_compact_bold"
+            android:text="Tên dự án"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCreateIdea" />
+
+        <LinearLayout
+            android:id="@+id/linerLayoutNameIdea"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="14sp"
+            android:background="@drawable/background_text"
+            app:layout_constraintDimensionRatio="351:49"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewNameIdea"
+            app:layout_constraintWidth_percent="0.85">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextNameIdea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="false"
+                android:background="@null"
+                android:hint="Tên dự án"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewDescriptionIdea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/sf_compact_bold"
+            android:text="Mô tả ý tưởng"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/linerLayoutNameIdea" />
+
+        <LinearLayout
+            android:id="@+id/linerLayoutDescriptionIdea"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="14sp"
+            android:background="@drawable/background_text"
+            app:layout_constraintDimensionRatio="351:200"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewDescriptionIdea"
+            app:layout_constraintWidth_percent="0.85">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextDescriptionIdea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="Mô tả dự án"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/sf_compact_bold"
+            android:text="Địa điểm"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/linerLayoutDescriptionIdea" />
+
+        <LinearLayout
+            android:id="@+id/linerLayoutAddress"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="14sp"
+            android:background="@drawable/background_text"
+            app:layout_constraintDimensionRatio="351:49"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewAddress"
+            app:layout_constraintWidth_percent="0.85">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="Nhập địa điểm"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewTimeStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/sf_compact_bold"
+            android:text="Thời gian bắt đầu"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/linerLayoutAddress" />
+
+        <LinearLayout
+            android:id="@+id/linerLayoutTimeStart"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="14sp"
+            android:background="@drawable/background_text"
+            app:layout_constraintDimensionRatio="168:49"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@id/textViewTimeStart"
+            app:layout_constraintWidth_percent="0.4">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextTimeStartTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="30/03/2021"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewTimeStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="79dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/sf_compact_bold"
+            android:text="Thời gian kết thúc"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/textViewTimeStart"
+            app:layout_constraintTop_toBottomOf="@+id/linerLayoutAddress" />
+
+        <LinearLayout
+            android:id="@+id/linerLayoutTimeStop"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="14sp"
+            android:background="@drawable/background_text"
+            app:layout_constraintDimensionRatio="168:49"
+            app:layout_constraintStart_toEndOf="@+id/linerLayoutTimeStart"
+            app:layout_constraintTop_toBottomOf="@id/textViewTimeStart"
+            app:layout_constraintWidth_percent="0.4">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextTimeTimeTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="30/09/2021"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/sf_compact_bold"
+            android:text="Số lượng thành viên"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/linerLayoutTimeStart" />
+
+        <LinearLayout
+            android:id="@+id/linerLayoutCount"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="14sp"
+            android:background="@drawable/background_text"
+            app:layout_constraintDimensionRatio="351:49"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewCount"
+            app:layout_constraintWidth_percent="0.85">
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/editTextCount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="0"
+                android:imeOptions="actionDone"
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="number"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:paddingEnd="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="44dp"
+            android:layout_marginEnd="30dp"
+            app:layout_constraintDimensionRatio="170:80"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linerLayoutCount"
+            app:layout_constraintWidth_percent="0.41">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonCreateIdea"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/background_button_green"
+                    android:clickable="true"
+                    android:elevation="0dp"
+                    android:fontFamily="@font/sf_compact_bold"
+                    android:text="Tạo ý tưởng"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintDimensionRatio="170:50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="44dp"
+            app:layout_constraintDimensionRatio="170:80"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+            app:layout_constraintTop_toBottomOf="@+id/linerLayoutCount"
+            app:layout_constraintWidth_percent="0.41">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonCancel"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/background_buttom_gray"
+                    android:clickable="true"
+                    android:elevation="0dp"
+                    android:fontFamily="@font/sf_compact_bold"
+                    android:text="Hủy"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black_alpha_70"
+                    app:layout_constraintDimensionRatio="170:50"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:focusable="true" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
