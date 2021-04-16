@@ -30,7 +30,7 @@ class IdeaAdapter(  private val onItemClick: (Idea) -> Unit) : RecyclerView.Adap
     fun updateData(ideas: MutableList<Idea>) {
         ideas.let {
             this.ideas.clear()
-            this.ideas.addAll(it.take(5))
+            this.ideas.addAll(/*it.take(5)*/it)
             notifyDataSetChanged()
         }
     }

@@ -39,9 +39,7 @@ class CreateIdeaFragment : Fragment() {
             ).get(
                 MainViewModel::class.java
             )
-        viewModel.getAllIdea?.observe(activity!!, {
-            Toast.makeText(context, "gduagad", Toast.LENGTH_LONG).show()
-        })
+
     }
 
     private fun eventCreateIdea() {
@@ -53,8 +51,6 @@ class CreateIdeaFragment : Fragment() {
             val timeStart = editTextTimeStartTime.text.toString()
             val timeStop = editTextTimeTimeTop.text.toString()
             Toast.makeText(context, "hihihi", Toast.LENGTH_LONG).show()
-            /*            add idea to ROOM
-             */
             viewModel.createIdea(
                 Idea(
                     0,

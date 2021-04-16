@@ -1,30 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:focusable="true"
-    android:background="@color/white">
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewNameIdea"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="31dp"
-        android:fontFamily="@font/sf_compact_bold"
-        android:text="GoodIdea!"
-        android:textColor="@color/mountain_meadow"
-        android:textSize="32sp"
-        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floating_action_button"
@@ -32,76 +11,111 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
+        android:elevation="@dimen/dp_1"
         android:backgroundTint="@color/mountain_meadow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_add_24" />
 
-    <SearchView
-        android:id="@+id/searchViewTeam"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/dp_32"
-        android:background="@drawable/background_search"
-        android:closeIcon="@android:color/transparent"
-        android:iconifiedByDefault="false"
-        android:queryBackground="@android:color/transparent"
-        android:queryHint="@string/search_team"
-        android:searchIcon="@drawable/ic_search"
-        android:theme="@style/ThemeOverlay.search"
-        app:layout_constraintDimensionRatio="351:49"
-        app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@+id/textViewNameIdea"
-        app:layout_constraintWidth_percent="0.85" />
-
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewTrending"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sf_compact_bold"
-        android:text="Treding"
-        android:layout_marginTop="@dimen/dp_50"
-        android:textColor="@color/mountain_meadow"
-        android:textSize="@dimen/sp_24"
-        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@id/searchViewTeam" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerPopular"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/dp_23"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintDimensionRatio="411:150"
-        app:layout_constraintTop_toBottomOf="@id/textViewTrending"
-        tools:listitem="@layout/item_trending_idea" />
+        android:layout_height="match_parent"
+        android:background="@null">
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/textViewPopular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/sf_compact_bold"
-        android:text="Popular"
-        android:layout_marginTop="@dimen/dp_30"
-        android:textColor="@color/mountain_meadow"
-        android:textSize="@dimen/sp_24"
-        app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-        app:layout_constraintTop_toBottomOf="@id/recyclerPopular" />
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefreshData"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintDimensionRatio="411:600"
-        app:layout_constraintTop_toBottomOf="@id/textViewPopular"
-        tools:layout_editor_absoluteX="0dp">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewFixtureHistory"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_trending_idea" />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.07" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewNameIdea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="31dp"
+                android:fontFamily="@font/sf_compact_bold"
+                android:text="GoodIdea!"
+                android:textColor="@color/mountain_meadow"
+                android:textSize="32sp"
+                app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <SearchView
+                android:id="@+id/searchViewTeam"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp_32"
+                android:background="@drawable/background_search"
+                android:closeIcon="@android:color/transparent"
+                android:iconifiedByDefault="false"
+                android:queryBackground="@android:color/transparent"
+                android:queryHint="@string/search_team"
+                android:searchIcon="@drawable/ic_search"
+                android:theme="@style/ThemeOverlay.search"
+                app:layout_constraintDimensionRatio="351:49"
+                app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNameIdea"
+                app:layout_constraintWidth_percent="0.85" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewTrending"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_50"
+                android:fontFamily="@font/sf_compact_bold"
+                android:text="Treding"
+                android:textColor="@color/mountain_meadow"
+                android:textSize="@dimen/sp_24"
+                app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/searchViewTeam" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerPopular"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/dp_23"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintDimensionRatio="411:150"
+                app:layout_constraintTop_toBottomOf="@id/textViewTrending"
+                tools:listitem="@layout/item_trending_idea" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textViewPopular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_30"
+                android:fontFamily="@font/sf_compact_bold"
+                android:text="Popular"
+                android:textColor="@color/mountain_meadow"
+                android:textSize="@dimen/sp_24"
+                app:layout_constraintStart_toStartOf="@id/guidelineLeft"
+                app:layout_constraintTop_toBottomOf="@id/recyclerPopular" />
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshData"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintDimensionRatio="411:600"
+                app:layout_constraintTop_toBottomOf="@id/textViewPopular"
+                tools:layout_editor_absoluteX="0dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewPopular"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_popular_idea" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

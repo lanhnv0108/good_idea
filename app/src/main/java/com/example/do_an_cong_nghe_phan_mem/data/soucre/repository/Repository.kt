@@ -7,12 +7,16 @@ class Repository(private val goodIdeaDao: GoodIdeaDao) {
 
     fun getAllIdea() = goodIdeaDao.getAllIdea()
 
-    fun getAllIdeaByApprove() = goodIdeaDao.getAllIdeaByApprove()
+    fun getAllIdeaByApprove(approve: Int) = goodIdeaDao.getAllIdeaByApprove(approve)
 
     fun getIdeaById(id: Int) = goodIdeaDao.getAllIdeaById(id)
 
     suspend fun createIdea(idea: Idea) {
         goodIdeaDao.createIdea(idea)
+    }
+
+    suspend fun updateApprove(approve: Int) {
+        goodIdeaDao.updateApprove(approve)
     }
 
     fun approveIdea(idea: Idea) {
@@ -23,7 +27,7 @@ class Repository(private val goodIdeaDao: GoodIdeaDao) {
         goodIdeaDao.cancelIdea(idea)
     }
 
-    suspend fun deleteAll(){
+    suspend fun deleteAll() {
         goodIdeaDao.deleteAll()
     }
 

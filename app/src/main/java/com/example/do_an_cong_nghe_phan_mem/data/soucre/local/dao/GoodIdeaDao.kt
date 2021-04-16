@@ -10,8 +10,8 @@ interface GoodIdeaDao {
     @Insert
     suspend fun createIdea(idea: Idea)
 
-    @Query("SELECT * FROM idea_table WHERE approve = 0")
-    fun getAllIdeaByApprove(): LiveData<List<Idea>>
+    @Query("SELECT * FROM idea_table WHERE approve = :approve")
+    fun getAllIdeaByApprove(approve: Int): LiveData<List<Idea>>
 
     @Query("SELECT * FROM idea_table WHERE id = :id")
     fun getAllIdeaById(id: Int): LiveData<Idea>
@@ -21,6 +21,9 @@ interface GoodIdeaDao {
 
     @Query("SELECT * FROM idea_table WHERE approve = :st")
     fun getAllByStatus(st: Int): LiveData<List<Idea>>
+
+    @Query("UPDATE idea_table SET approve = 1 WHERE id = :idIdea")
+    suspend fun updateApprove(idIdea: Int)
 
     @Delete
     fun cancelIdea(idea: Idea)

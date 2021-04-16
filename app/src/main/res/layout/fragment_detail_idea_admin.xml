@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -22,7 +21,7 @@
             app:layout_constraintGuide_percent="0.07" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/textViewCreateIdea"
+            android:id="@+id/textViewCreateIdeaAdmin"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="52dp"
@@ -36,13 +35,13 @@
             app:layout_constraintWidth_percent="0.82" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageViewCreator"
+            android:id="@+id/imageViewCreatorAdmin"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@color/mountain_meadow"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/textViewCreateIdea"
+            app:layout_constraintTop_toBottomOf="@+id/textViewCreateIdeaAdmin"
             app:layout_constraintWidth_percent="0.08"
             app:shapeAppearanceOverlay="@style/RadiusImageViewCicler" />
 
@@ -56,8 +55,8 @@
             android:textColor="@color/black"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageViewCreator"
-            app:layout_constraintStart_toEndOf="@+id/imageViewCreator"
-            app:layout_constraintTop_toTopOf="@+id/imageViewCreator" />
+            app:layout_constraintStart_toEndOf="@+id/imageViewCreatorAdmin"
+            app:layout_constraintTop_toTopOf="@+id/imageViewCreatorAdmin" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageViewIdeaDetail"
@@ -84,7 +83,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imageViewIdeaDetail" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/textViewDescriptionContentIdeaDetail"
+            android:id="@+id/textViewDescriptionContentIdeaDetailAdmin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sf_compact_regular"
@@ -107,10 +106,10 @@
             android:textSize="14sp"
             android:layout_marginTop="@dimen/dp_23"
             app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionContentIdeaDetail" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewDescriptionContentIdeaDetailAdmin" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/textViewAddressDetail"
+            android:id="@+id/textViewAddressDetailAdmin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sf_compact_regular"
@@ -133,10 +132,10 @@
             android:textSize="14sp"
             android:layout_marginTop="@dimen/dp_23"
             app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/textViewAddressDetail" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewAddressDetailAdmin" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/textViewContentStart"
+            android:id="@+id/textViewContentStartAdmin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sf_compact_regular"
@@ -159,10 +158,10 @@
             android:textSize="14sp"
             android:layout_marginTop="@dimen/dp_23"
             app:layout_constraintStart_toStartOf="@id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/textViewContentStart" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewContentStartAdmin" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/textViewContentStop"
+            android:id="@+id/textViewContentStopAdmin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/sf_compact_regular"
@@ -182,7 +181,7 @@
             android:layout_marginEnd="30dp"
             app:layout_constraintDimensionRatio="170:80"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewContentStop"
+            app:layout_constraintTop_toBottomOf="@+id/textViewContentStopAdmin"
             app:layout_constraintWidth_percent="0.41">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -190,7 +189,7 @@
                 android:layout_height="match_parent">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/buttonJoin"
+                    android:id="@+id/buttonApprove"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -198,7 +197,7 @@
                     android:clickable="true"
                     android:elevation="0dp"
                     android:fontFamily="@font/sf_compact_bold"
-                    android:text="Tham gia ý tưởng"
+                    android:text="Duyệt ý tưởng"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     app:layout_constraintDimensionRatio="170:50"
@@ -214,7 +213,7 @@
             android:layout_marginTop="44dp"
             app:layout_constraintDimensionRatio="170:80"
             app:layout_constraintStart_toStartOf="@+id/guidelineLeft"
-            app:layout_constraintTop_toBottomOf="@+id/textViewContentStop"
+            app:layout_constraintTop_toBottomOf="@+id/textViewContentStopAdmin"
             app:layout_constraintWidth_percent="0.41">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -222,7 +221,7 @@
                 android:layout_height="match_parent">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/buttonCancelJoin"
+                    android:id="@+id/buttonCanceApprove"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -231,7 +230,7 @@
                     android:elevation="0dp"
                     android:focusable="true"
                     android:fontFamily="@font/sf_compact_bold"
-                    android:text="Hủy"
+                    android:text="Hủy ý tưởng"
                     android:textAllCaps="false"
                     android:textColor="@color/white"
                     app:layout_constraintDimensionRatio="170:50"

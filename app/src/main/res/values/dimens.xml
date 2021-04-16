@@ -9,4 +9,6 @@
     <dimen name="sp_24">24sp</dimen>
     <dimen name="dp_50">50dp</dimen>
     <dimen name="dp_23">23dp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="dp_1">1dp</dimen>
 </resources>

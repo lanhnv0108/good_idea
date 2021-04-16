@@ -23,6 +23,11 @@
         <item name="cornerSize">5%</item>
     </style>
 
+    <style name="RadiusImageViewCicler" parent="Theme.Do_an_cong_nghe_phan_mem">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">49%</item>
+    </style>
+
     <style name="ThemeOverlay.search" parent="Theme.Do_an_cong_nghe_phan_mem">
         <!-- Text color -->
         <item name="android:editTextColor">@color/mountain_meadow</item>

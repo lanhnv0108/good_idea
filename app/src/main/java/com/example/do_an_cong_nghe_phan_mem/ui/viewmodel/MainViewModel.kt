@@ -16,11 +16,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     init {
         val userDatabase = UserDatabase.getDatabase(application).goodIdeaDao()
         repository = Repository(userDatabase)
-        getAllIdea()
     }
 
-    private fun getAllIdea() {
-        getAllIdea = repository.getAllIdeaByApprove()
+    fun getAllIdea(approve: Int) {
+        getAllIdea = repository.getAllIdeaByApprove(approve)
     }
 
     fun createIdea(idea: Idea) {
@@ -35,5 +34,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-
+    fun getIdeaByApprove(approve: Int) {
+        repository.getAllIdeaByApprove(approve)
+    }
 }

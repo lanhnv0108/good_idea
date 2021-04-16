@@ -12,6 +12,7 @@ import com.example.do_an_cong_nghe_phan_mem.R
 import com.example.do_an_cong_nghe_phan_mem.data.model.Idea
 import com.example.do_an_cong_nghe_phan_mem.ui.client.createidea.CreateIdeaFragment
 import com.example.do_an_cong_nghe_phan_mem.ui.client.detial.FragmentDetailIdea
+import com.example.do_an_cong_nghe_phan_mem.ui.client.home.popular.IdeaPopularAdapter
 import com.example.do_an_cong_nghe_phan_mem.ui.viewmodel.MainViewModel
 import com.example.do_an_cong_nghe_phan_mem.utils.addFragment
 import kotlinx.android.synthetic.main.fragment_idea.*
@@ -21,6 +22,11 @@ class IdeaFragment : Fragment() {
     private lateinit var viewModel: MainViewModel
     private val ideaAdapter by lazy {
         IdeaAdapter() {
+            addFragment(FragmentDetailIdea.newInstance(it.id), R.id.containerLayout)
+        }
+    }
+    private val ideaPopularAdapter by lazy {
+        IdeaPopularAdapter() {
             addFragment(FragmentDetailIdea.newInstance(it.id), R.id.containerLayout)
         }
     }
@@ -51,6 +57,10 @@ class IdeaFragment : Fragment() {
             setHasFixedSize(true)
             adapter = this@IdeaFragment.ideaAdapter
         }
+        recyclerViewPopular.apply {
+            setHasFixedSize(true)
+            adapter = this@IdeaFragment.ideaPopularAdapter
+        }
     }
 
     private fun initData() {
@@ -61,13 +71,13 @@ class IdeaFragment : Fragment() {
             ).get(
                 MainViewModel::class.java
             )
+        viewModel.getAllIdea(1)
         viewModel.getAllIdea?.observe(this, {
             Log.e("xxx", it.toMutableList().toString())
             val s = it.toMutableList()
             ideaAdapter.updateData(s)
+            ideaPopularAdapter.updateData(s)
         })
-
-        ideaAdapter.updateString("hello")
     }
 
     companion object {
