@@ -1,6 +1,5 @@
 package com.example.do_an_cong_nghe_phan_mem.ui.client.home.popular
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -30,7 +29,7 @@ class IdeaPopularAdapter(private val onItemClick: (Idea) -> Unit) :
     fun updateData(ideas: MutableList<Idea>) {
         ideas.let {
             this.ideas.clear()
-            this.ideas.addAll(it)
+            this.ideas.addAll(it.take(10))
             notifyDataSetChanged()
         }
     }
